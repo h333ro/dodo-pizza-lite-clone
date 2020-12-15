@@ -1,7 +1,7 @@
-#Procedure to launch after you clone repository:
-##1)yarn install
-##2)json-server --watch db.json
-##3)yarn start
+# `Procedure to launch after you clone repository:`
+## `1)yarn install`
+## `2)json-server --watch db.json`
+## `3)yarn start`
 
 
 ### `yarn start`

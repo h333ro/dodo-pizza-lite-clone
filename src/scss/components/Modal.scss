@@ -1,0 +1,43 @@
+//МОДАЛКА ОВЕРОЛЛ
+.modal {
+  position: fixed;
+  top: -100px;
+  bottom: -100px;
+  right: -100px;
+  left: -100px;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 15;
+  cursor: pointer;
+  @include flex-center;
+
+  &__content {
+    cursor: auto;
+    background: white;
+    //position: absolute;
+    //top: 50%;
+    //left: 50%;
+    //transform: translate(-50%, -50%);
+    border-radius: 20px;
+    position: relative;
+    //width: auto;
+  }
+
+  &__close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(130%, 0);
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 40px;
+    cursor: pointer;
+    color: white;
+    font-weight: 400;
+    transition: .1s all ease-out;
+
+    &:hover {
+      transform: translate(130%, 0) scale(1.1);
+    }
+  }
+}

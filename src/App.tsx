@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect} from 'react';
+import { Route } from 'react-router-dom';
+import './scss/App.scss'
+import {MainPage} from "./pages/MainPage";
+import {BucketPage} from "./pages/BucketPage";
+import {useDispatch} from "react-redux";
+import { getAndSetPizza } from './redux/reducers/productsReducer';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const dispatch = useDispatch();
+    useEffect(()=>{
+        dispatch(getAndSetPizza());
+    },[dispatch]);
+
+    return (
+        <div className="app">
+            <Route exact path={'/'} render={()=><MainPage/>}/>
+            <Route exact path={'/bucket'} render={()=><BucketPage/>}/>
+        </div>
+    );
 }
 
 export default App;
+
+
+
+
+
+
+
+

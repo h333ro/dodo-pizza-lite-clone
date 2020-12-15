@@ -1,0 +1,62 @@
+//КНОКА В МОДАЛКЕ
+.toggle-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: $grey;
+  border-radius: 9999px;
+  position: relative;
+  flex-wrap: nowrap;
+  overflow: hidden;
+
+  &__item {
+    color: black;
+    font-size: 12px;
+    line-height: 32px;
+    user-select: none;
+    text-align: center;
+    cursor: pointer;
+
+    span {
+      position: relative;
+      z-index: 3;
+    }
+
+    &:hover {
+      font-weight: 500;
+    }
+
+    &_active {
+      font-weight: 500;
+    }
+
+    &_disabled {
+      color: grey;
+    }
+  }
+
+  &__toddler {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    z-index: 1;
+    border-radius: 9999px;
+    transition: all .25s ease-out;
+
+    &:before {
+      position: absolute;
+      left: 2%;
+      top: 5%;
+      content: ' ';
+      width: 96%;
+      height: 90%;
+      background: white;
+      border-radius: 9999px;
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+

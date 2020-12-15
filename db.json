@@ -1,0 +1,127 @@
+{
+  "pizza": [
+    {
+      "id":0,
+      "name": "Пепперони фреш",
+      "imgURL": "https://dodopizza-a.akamaihd.net/static/Img/Products/5dffe4c7d3bc49668f50c1d08d920992_292x292.jpeg",
+      "ingredients": [
+        {"id": 0, "name": "Пикантная пепперони", "editable": false},
+        {"id": 1, "name": "увеличенная порция моцареллы", "editable": true},
+        {"id": 2, "name": "томаты", "editable": true},
+        {"id": 3, "name": "томатный соус", "editable": false}
+      ],
+      "types": [
+        {"size": "small","name":"Маленькая", "weight": 410, "diameter": 25, "traditionalDough": true, "thinDough": false, "cost": 245},
+        {"size": "medium","name":"Средняя", "weight": 610, "diameter": 30, "traditionalDough": true, "thinDough": true, "cost": 375},
+        {"size": "big", "name":"Большая", "weight": 800, "diameter": 35, "traditionalDough": true, "thinDough": true, "cost": 495}
+      ],
+      "additional": [
+        {"id": 0, "imgURL": "https://dodopizza-a.akamaihd.net/static/Img/Ingredients/000D3A22FA54A81411E9AFA5E376B4DF", "name": "Острый холапеньо", "cost": {"small": 29, "medium": 39, "big": 49}},
+        {"id": 1, "imgURL": "https://dodopizza-a.akamaihd.net/static/Img/Ingredients/000D3A39D824A82E11E9AFA637AAB68F", "name": "Бекон" ,"cost": {"small": 29, "medium": 39, "big": 49}},
+        {"id": 3, "imgURL": "https://dodopizza-a.akamaihd.net/static/Img/Ingredients/000D3A22FA54A81411E9AFA69C1FE796", "name": "Сыр Пармезан", "cost": {"small": 29, "medium": 39, "big": 49}}
+      ]
+    },
+    {
+      "id":1,
+      "name": "Сырная",
+      "imgURL": "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/03e6638d-0185-415f-9781-bc906e3fd3f5.jpg",
+      "ingredients": [
+        {"id": 0, "name": "Увеличенная порция моцареллы", "editable": false},
+        {"id": 1, "name": "томатный соус", "editable": true}
+      ],
+      "types": [
+        {"size": "small","name":"Маленькая", "weight": 410, "diameter": 25, "traditionalDough": true, "thinDough": false, "cost": 245},
+        {"size": "medium","name":"Средняя", "weight": 610, "diameter": 30, "traditionalDough": true, "thinDough": true, "cost": 375},
+        {"size": "big", "name":"Большая", "weight": 800, "diameter": 35, "traditionalDough": true, "thinDough": true, "cost": 495}
+      ],
+      "additional": [
+        {"id": 0, "imgURL": "https://dodopizza-a.akamaihd.net/static/Img/Ingredients/000D3A39D824A82E11E9AFA5B328D35A", "name": "Цыпленок", "cost": {"small": 29, "medium": 39, "big": 49}},
+        {"id": 1, "imgURL": "https://dodopizza-a.akamaihd.net/static/Img/Ingredients/000D3A39D824A82E11E9AFA637AAB68F", "name": "Бекон" ,"cost": {"small": 29, "medium": 39, "big": 49}},
+        {"id": 3, "imgURL": "https://dodopizza-a.akamaihd.net/static/Img/Ingredients/000D3A39D824A82E11E9AFA6B0FFC349", "name": "Брынза", "cost": {"small": 29, "medium": 39, "big": 49}}
+      ]
+    },
+    {
+      "id":2,
+      "name": "Четыре сезона",
+      "imgURL": "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/6d4e1c2c-1c81-40c6-95d9-0d19afcebcb5.jpg",
+      "ingredients": [
+        {"id": 0, "name": "Увеличенная порция моцареллы", "editable": false},
+        {"id": 1, "name": "ветчина", "editable": true},
+        {"id": 2, "name": "пикантная пепперони", "editable": true},
+        {"id": 3, "name": "кубики брынзы", "editable": false},
+        {"id": 4, "name": "томаты", "editable": true},
+        {"id": 5, "name": "шампиньоны", "editable": true},
+        {"id": 6, "name": "томатный соус", "editable": true},
+        {"id": 7, "name": "итальянские травы", "editable": false}
+      ],
+      "types": [
+        {"size": "small","name":"Маленькая", "weight": 410, "diameter": 25, "traditionalDough": true, "thinDough": false, "cost": 375},
+        {"size": "medium","name":"Средняя", "weight": 610, "diameter": 30, "traditionalDough": true, "thinDough": true, "cost": 565},
+        {"size": "big", "name":"Большая", "weight": 800, "diameter": 35, "traditionalDough": true, "thinDough": true, "cost": 695}
+      ],
+      "additional": []
+    },
+    {
+      "id":3,
+      "name": "Карбонара",
+      "imgURL": "https://dodopizza-a.akamaihd.net/static/Img/Products/efed3525d49b4ccfbcef9278570419db_292x292.jpeg",
+      "ingredients": [
+        {"id": 0, "name": "Бекон", "editable": false},
+        {"id": 1, "name": "сыры чеддер и пармезан", "editable": true},
+        {"id": 2, "name": "моцарелла", "editable": true},
+        {"id": 3, "name": "томаты черри", "editable": false},
+        {"id": 4, "name": "красный лук", "editable": true},
+        {"id": 5, "name": "чеснок", "editable": true},
+        {"id": 6, "name": "соус альфредо", "editable": false},
+        {"id": 7, "name": "итальянские травы", "editable": true}
+      ],
+      "types": [
+        {"size": "small","name":"Маленькая", "weight": 410, "diameter": 25, "traditionalDough": true, "thinDough": false, "cost": 375},
+        {"size": "medium","name":"Средняя", "weight": 610, "diameter": 30, "traditionalDough": true, "thinDough": true, "cost": 565},
+        {"size": "big", "name":"Большая", "weight": 800, "diameter": 35, "traditionalDough": true, "thinDough": true, "cost": 695}
+      ],
+      "additional": [
+        {"id": 0, "imgURL": "https://dodopizza-a.akamaihd.net/static/Img/Ingredients/000D3A22FA54A81411E9AFA62D5D6027", "name": "Острая чориззо", "cost": {"small": 29, "medium": 39, "big": 49}},
+        {"id": 1, "imgURL": "https://dodopizza-a.akamaihd.net/static/Img/Ingredients/000D3A39D824A82E11E9AFA637AAB68F", "name": "Бекон" ,"cost": {"small": 29, "medium": 39, "big": 49}},
+        {"id": 3, "imgURL": "https://dodopizza-a.akamaihd.net/static/Img/Ingredients/000D3A39D824A82E11E9AFA61B9A8D61", "name": "Ветчина", "cost": {"small": 29, "medium": 39, "big": 49}}
+      ]
+    },
+    {
+      "id":4,
+      "name": "Пицца-пирог",
+      "imgURL": "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/3327d3dd-1feb-443f-97b6-731fa8e64fac.jpg",
+      "ingredients": [
+        {"id": 0, "name": "Ананасы", "editable": false},
+        {"id": 1, "name": "брусника", "editable": true},
+        {"id": 2, "name": "молоко сгущенное", "editable": true}
+      ],
+      "types": [
+        {"size": "small","name":"Маленькая", "weight": 410, "diameter": 25, "traditionalDough": true, "thinDough": false, "cost": 375},
+        {"size": "medium","name":"Средняя", "weight": 610, "diameter": 30, "traditionalDough": true, "thinDough": true, "cost": 565},
+        {"size": "big", "name":"Большая", "weight": 800, "diameter": 35, "traditionalDough": true, "thinDough": true, "cost": 695}
+      ],
+      "additional": []
+    },
+    {
+      "id":5,
+      "name": "Гавайская",
+      "imgURL": "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/d640c5fb-0944-4123-9363-c5706c725546.jpg",
+      "ingredients": [
+        {"id": 0, "name": "Цыпленок", "editable": false},
+        {"id": 1, "name": "томатный соус", "editable": true},
+        {"id": 2, "name": "моцарелла", "editable": false},
+        {"id": 3, "name": "ананасы", "editable": true}
+      ],
+      "types": [
+        {"size": "small","name":"Маленькая", "weight": 410, "diameter": 25, "traditionalDough": true, "thinDough": false, "cost": 375},
+        {"size": "medium","name":"Средняя", "weight": 610, "diameter": 30, "traditionalDough": true, "thinDough": true, "cost": 565},
+        {"size": "big", "name":"Большая", "weight": 800, "diameter": 35, "traditionalDough": true, "thinDough": true, "cost": 695}
+      ],
+      "additional": [
+        {"id": 0, "imgURL": "https://dodopizza-a.akamaihd.net/static/Img/Ingredients/000D3A22FA54A81411EA083CC540F6EE", "name": "Моцарелла", "cost": {"small": 29, "medium": 39, "big": 49}},
+        {"id": 1, "imgURL": "https://dodopizza-a.akamaihd.net/static/Img/Ingredients/000D3A22FA54A81411E9AFA5E376B4DF", "name": "Острый халапеньо" ,"cost": {"small": 29, "medium": 39, "big": 49}},
+        {"id": 3, "imgURL": "https://dodopizza-a.akamaihd.net/static/Img/Ingredients/000D3A39D824A82E11E9AFA61B9A8D61", "name": "Ветчина", "cost": {"small": 29, "medium": 39, "big": 49}}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+.popup-enter {
+    opacity: 0;
+    transform: translateY(20px);
+}
+.popup-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 300ms, transform 300ms;
+}
+.popup-exit {
+    opacity: 1;
+}
+.popup-exit-active {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 300ms, transform 300ms;
+}

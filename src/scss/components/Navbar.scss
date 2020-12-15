@@ -1,0 +1,168 @@
+.navbar {
+  display: flex;
+  padding: 0;
+  justify-content: space-between;
+  align-items: center;
+
+  &__list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    padding: 20px 0;
+    margin-right: 20px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1;
+    cursor: pointer;
+    transition: all .25s;
+
+    &:hover {
+      color: $orange;
+    }
+  }
+
+  &__bucket {
+    position: relative;
+    a {
+      text-decoration: none;
+    }
+    &-button {
+      display: flex;
+      text-decoration: none;
+      border-radius: 9999px;
+      position: relative;
+      background: $orange;
+      outline: none;
+      color: #fff;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 24px;
+      padding: 8px 20px;
+      cursor: pointer;
+      transition: .3s all;
+
+      &-counter {
+        margin-left: 5px;
+        padding-left: 5px;
+        border-left: 1px solid white;
+        position: relative;
+        @include flex-center;
+        width: 25px;
+        div{
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          @include flex-center;
+          font-size: 16px;
+          transition: all .3s;
+          &:nth-child(1){
+            opacity: 1;
+            transform: translateX(0);
+            transition-delay: .1s;
+          }
+          &:nth-child(2){
+            font-size: 18px;
+            opacity: 0;
+            transform: translateX(2px);
+          }
+        }
+      }
+
+      &:hover {
+        background: darken($orange, 5%);
+      }
+      &:hover .navbar__bucket-button-counter{
+        div{
+          &:nth-child(1){
+            opacity: 0;
+            transform: translateX(5px);
+            transition-delay: 0s;
+          }
+          &:nth-child(2){
+            opacity: 1;
+            transform: translateX(7px);
+            transition-delay: .1s;
+          }
+        }
+      }
+
+    }
+  }
+
+  &__bucket-popup {
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -3px 20px;
+    position: absolute;
+    top: calc(100% + 15px);
+    right: 0;
+    padding: 10px;
+    background: #fff;
+    min-width: 352px;
+    @include flex-center;
+    border-radius: 8px;
+    z-index: 5;
+    display: flex;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      right: 25px;
+      border: 10px solid transparent;
+      border-bottom: 10px solid #fff;
+      z-index: 5;
+    }
+  }
+
+  &__bucket-success {
+    position: absolute;
+    top: calc(100% + 5px);
+    right: 0;
+    width: 250px;
+    z-index: 4;
+    @include flex-center;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  &__bucket-success-item {
+    background: rgba(0, 0, 0, 0.65);
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 14px;
+    margin: 5px 0;
+    width: 100%;
+  }
+
+}
+
+.sticky-container {
+  position: sticky;
+  top: 0;
+  z-index: 15;
+  background: #fff;
+}
+
+.bucket-popup {
+  &__empty {
+    width: 100%;
+    height: auto;
+    @include flex-center;
+    flex-direction: column;
+
+    img {
+      max-width: 352px;
+    }
+
+    div {
+      margin-bottom: 30px;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 24px;
+    }
+  }
+}

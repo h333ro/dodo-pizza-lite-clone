@@ -1,0 +1,178 @@
+.bucket {
+  &__header {
+    border-bottom: 1px solid $grey2;
+    padding: 20px 0;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  &__content {
+    width: 700px;
+    margin: 0 auto;
+
+    h1 {
+      padding: 48px 0;
+      border-bottom: 1px solid $grey2;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+  }
+
+  &__buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+
+    div {
+      flex: 0 1 35%;
+    }
+  }
+
+  &__total-cost {
+    @include flex-center;
+    font-size: 18px;
+    font-weight: 500;
+    span {
+      color: $orange;
+    }
+  }
+}
+
+.bucket-item {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 15px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid $grey2;
+  position: relative;
+
+  &_minified {
+    flex-direction: column;
+    width: 300px;
+  }
+
+  &__image-name-container {
+    @include flex-center;
+    width: 100%;
+  }
+
+  &__info {
+    width: 100%;
+  }
+
+  &__img {
+    max-width: 70px;
+    @include flex-center;
+    margin-right: 10px;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    &_minified {
+      max-width: 60px;
+    }
+  }
+
+  &__name {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 18px;
+    color: rgb(0, 0, 0);
+    margin-bottom: 4px;
+    width: 100%;
+
+    &_minified {
+
+    }
+  }
+
+  &__config {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    color: rgb(115, 121, 140);
+
+    &_minified {
+      font-size: 12px;
+      letter-spacing: 0;
+    }
+  }
+
+  &__user-interactions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    i {
+      cursor: pointer;
+      font-size: 14px;
+      transition: .15s all ease-out;
+
+      &:hover {
+        color: $orange;
+      }
+    }
+
+    &_minified {
+      margin-left: auto;
+
+      i {
+        position: absolute;
+        top: 12px;
+        right: 0;
+        transform: translateX(100%);
+      }
+
+      .bucket-item__cost {
+        margin: 0;
+      }
+    }
+  }
+
+  &__cost {
+    margin: 0 36px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 18px;
+    white-space: nowrap;
+  }
+}
+
+
+//КНОПКА СЧЕТЧИКА
+
+.count-button {
+  display: flex;
+  width: 100px;
+  height: 32px;
+  background: $grey;
+  border-radius: 9999px;
+  justify-content: space-between;
+  font-weight: bold;
+
+  div {
+    flex-basis: 33%;
+    @include flex-center;
+    color: rgb(92, 99, 112);
+
+    &:nth-child(2n-1) {
+      cursor: pointer;
+      user-select: none;
+
+      &:hover {
+        color: black;
+      }
+    }
+  }
+
+  &__number {
+    flex-grow: 1;
+  }
+}

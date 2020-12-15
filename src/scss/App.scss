@@ -1,0 +1,84 @@
+$orange: #D96334;
+$containerSize: 1280px;
+$grey: rgb(243, 243, 247);
+$lightgrey: #FCFCFC;
+$grey2: rgb(230, 230, 230);
+
+@import "Mixins";
+
+body, html {
+  background: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  user-select: none;
+}
+
+.container {
+  width: $containerSize;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1380px) {
+  .container {
+    width: 960px;
+  }
+}
+
+@import "components/Header";
+@import "components/Navbar";
+@import "components/Bucket";
+@import "components/Additional";
+@import "components/Carousel";
+@import "components/ChooseButton";
+@import "components/Modal";
+@import "components/PizzaModal";
+@import "components/Products";
+@import "components/ToggleButton";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

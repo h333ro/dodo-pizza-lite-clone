@@ -1,0 +1,17 @@
+.empty-enter {
+    opacity: 0;
+    transform: translateY(20px);
+}
+.empty-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 300ms, transform 300ms;
+    transition-delay: 300ms;
+}
+.empty-exit {
+    opacity: 1;
+}
+.empty-exit-active {
+    opacity: 0;
+    transform: translateY(20px);
+}

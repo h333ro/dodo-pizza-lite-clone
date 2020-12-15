@@ -1,0 +1,33 @@
+//СЛАЙДЕР
+.main-carousel {
+  min-width: $containerSize;
+  position: relative;
+
+  img {
+    cursor: pointer;
+    width: 96%;
+    border-radius: 20px;
+  }
+
+  &__slide {
+    text-align: center;
+    outline: none;
+  }
+}
+
+.carousel-dots {
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
+
+  button:before {
+    color: rgb(84, 76, 72);
+    opacity: 1 !important;
+    font-size: 45px !important;
+  }
+
+  & li.carousel-dots-active button:before {
+    opacity: 1 !important;
+    color: rgb(197, 202, 206) !important;
+  }
+}

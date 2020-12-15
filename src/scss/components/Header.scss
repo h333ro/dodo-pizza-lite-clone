@@ -1,0 +1,42 @@
+.header{
+  @include flex-center;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 25px;
+  &__info{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 100%;
+    margin-left: 40px;
+    span{
+      word-wrap: normal;
+      white-space: nowrap;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 1.2;
+      &:nth-child(2){
+        font-size: 15px;
+      }
+    }
+  }
+  &__button{
+    outline: none;
+    border: 1px solid grey;
+    background: white;
+    border-radius: 100px;
+    padding: 7px 11px;
+    cursor: pointer;
+    font-size: 14px;
+    white-space: nowrap;
+    font-weight: 500;
+    transition: all .2s;
+    &:enabled{
+      background: #fff;
+    }
+    &:hover{
+      border: 1px solid $orange;
+      color: $orange;
+    }
+  }
+}

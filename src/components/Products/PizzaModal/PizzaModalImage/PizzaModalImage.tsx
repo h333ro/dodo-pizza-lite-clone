@@ -1,5 +1,4 @@
 import React, {useMemo} from 'react';
-import pepperoni from "../../../../assets/image/pizza/pepperoni/pepperoni.jpeg";
 
 type PropsType = {
     activeSize:string,

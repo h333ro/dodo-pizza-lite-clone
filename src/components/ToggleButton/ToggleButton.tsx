@@ -9,7 +9,7 @@ type PropsTypes = {
     setActive:(activeIndex:number)=>void,
 }
 
-export const ToggleButton:React.FC<PropsTypes> = ({buttons,setActive}) =>{
+export const ToggleButton:React.FC<PropsTypes> = React.memo(({buttons,setActive}) =>{
     const active = buttons.active;
 
     const toddlerStyle = {
@@ -29,4 +29,4 @@ export const ToggleButton:React.FC<PropsTypes> = ({buttons,setActive}) =>{
                 </div>)}
         </div>
     )
-};
+});

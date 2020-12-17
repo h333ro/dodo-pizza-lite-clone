@@ -17,11 +17,11 @@ export const PizzaContent: React.FC = props => {
         setIsOpen(false);
         document.documentElement.style.overflow = 'auto';
         document.documentElement.style.paddingRight = 0 + 'px';
-    },[setIsOpen]);
+    },[]);
     const setPizzaModalOpened = useCallback((item:PizzaType) =>{
         dispatch(pizzaModalActions.setItem(item));
         setIsOpen(true);
-    },[setIsOpen,dispatch]);
+    },[dispatch]);
 
     return (
         <div className={'container'}>

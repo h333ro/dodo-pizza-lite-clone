@@ -5,7 +5,7 @@ type PropsType = {
     increaseDecreaseFlow:(type:'increase'|'decrease')=>void;
 }
 
-export const CountButton:React.FC<PropsType> = ({counter,increaseDecreaseFlow}) =>{
+export const CountButton:React.FC<PropsType> = React.memo(({counter,increaseDecreaseFlow}) =>{
     return(
         <div className={'count-button'}>
             <div onClick={()=>increaseDecreaseFlow("decrease")}>&ndash;</div>
@@ -15,4 +15,4 @@ export const CountButton:React.FC<PropsType> = ({counter,increaseDecreaseFlow}) 
             <div onClick={()=>increaseDecreaseFlow("increase")}>+</div>
         </div>
     )
-};
+});

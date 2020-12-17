@@ -11,7 +11,7 @@ type PropsType = {
     pizzaSize:string,
 }
 
-export const Additional:React.FC<PropsType> = ({items,pizzaSize}) =>{
+export const Additional:React.FC<PropsType> = React.memo(({items,pizzaSize}) =>{
 
     const active = useSelector(getAdditionalActiveArray);
     const dispatch = useDispatch();
@@ -30,4 +30,4 @@ export const Additional:React.FC<PropsType> = ({items,pizzaSize}) =>{
                                 active={active.includes(index)}/>)}
         </div>
     )
-};
+});

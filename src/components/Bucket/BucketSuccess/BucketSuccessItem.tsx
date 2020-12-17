@@ -5,7 +5,7 @@ type PropsType ={
     removeItem: (id:number) => void,
 }
 
-export const BucketSuccessItem:React.FC<PropsType> = ({item,removeItem}) =>{
+export const BucketSuccessItem:React.FC<PropsType> = React.memo(({item,removeItem}) =>{
 
     useEffect(()=>{
         removeItem(item.id);
@@ -17,4 +17,4 @@ export const BucketSuccessItem:React.FC<PropsType> = ({item,removeItem}) =>{
             <div>{item.name}</div>
         </div>
     )
-};
+});

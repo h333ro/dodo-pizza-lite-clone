@@ -1,4 +1,4 @@
-import {AdditionalType, IngredientType, PizzaType, PizzaTypesType} from "./productsReducer";
+import {PizzaType} from "./productsReducer";
 import {GetActionType} from "../redux";
 import {ToggleButtonsType} from "../../components/ToggleButton/ToggleButton";
 

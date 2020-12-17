@@ -1,5 +1,4 @@
-import React, {useCallback, useEffect, useRef, useState} from 'react';
-import pepperoni from "../../../assets/image/pizza/pepperoni/pepperoni.jpeg";
+import React, {useCallback, useRef, useState} from 'react';
 import {CountButton} from "../../CountButton/CountButton";
 import {bucketActions, BucketItemType} from "../../../redux/reducers/bucketReducer";
 import {useDispatch} from "react-redux";
@@ -10,7 +9,7 @@ type PropsType = {
     minified?:boolean,
 }
 
-export const BucketItem:React.FC<PropsType> = ({bucketItem,minified=false}) =>{
+export const BucketItem:React.FC<PropsType> = React.memo(({bucketItem,minified=false}) =>{
 
     const item = bucketItem.item;
     const removedIngredients = item.ingredients.filter(i => i.removed);
@@ -19,10 +18,6 @@ export const BucketItem:React.FC<PropsType> = ({bucketItem,minified=false}) =>{
 
     //Вычисление длины кнопок взаимодействия элемента исходя из размера блока информации элемента
     const [interactionWidth,setInteractionWidth] = useState('auto');
-    useEffect(()=>{
-
-    },[minified]);
-
     const adjustInteraction = useCallback(()=>{
         if(minified) {
             setInteractionWidth(bucketInfoRef.current?.clientWidth + 'px')
@@ -67,4 +62,4 @@ export const BucketItem:React.FC<PropsType> = ({bucketItem,minified=false}) =>{
             </div>
         </div>
     )
-};
+});

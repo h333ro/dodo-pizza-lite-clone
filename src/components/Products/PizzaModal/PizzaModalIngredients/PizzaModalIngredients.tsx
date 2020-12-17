@@ -6,7 +6,7 @@ type PropsType ={
     editCallback:(id:number)=>void,
 }
 
-export const PizzaModalIngredients:React.FC<PropsType> = ({ingredients,editCallback}) =>{
+export const PizzaModalIngredients:React.FC<PropsType> = React.memo(({ingredients,editCallback}) =>{
 
     return(
         <div className={'pizza-modal__ingredients'}>
@@ -36,4 +36,4 @@ export const PizzaModalIngredients:React.FC<PropsType> = ({ingredients,editCallb
             })}
         </div>
     )
-};
+});

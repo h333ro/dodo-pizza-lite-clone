@@ -52,4 +52,4 @@ export const BucketPopup: React.FC<PropsType> = ({isOpen, bucketItems}) => {
             </div>
         </CSSTransition>
     )
-}
+};

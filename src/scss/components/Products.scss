@@ -47,7 +47,10 @@
     align-items: center;
     margin-top: 16px;
   }
-
+  &__item-cost{
+    font-size: 18px;
+    font-weight: 500;
+  }
   &__choose-button {
     outline: none;
     border: none;

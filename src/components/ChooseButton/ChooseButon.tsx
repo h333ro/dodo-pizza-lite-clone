@@ -9,7 +9,7 @@ type PropsType = {
     backgroundColor?:string,
 }
 
-export const ChooseButton:React.FC<PropsType> = ({text,customClass,
+export const ChooseButton:React.FC<PropsType> = React.memo(({text,customClass,
                                                      handler,color,backgroundColor, hoverColor}) =>{
     customClass = ' '+customClass;
     return(
@@ -19,4 +19,4 @@ export const ChooseButton:React.FC<PropsType> = ({text,customClass,
             </button>
         </div>
     )
-};
+});

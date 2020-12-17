@@ -7,7 +7,7 @@ type PropsType= {
 }
 
 //Компонент вывода массива настроек элемента под его инормацей
-export const BucketConfigInfo: React.FC<PropsType> = React.memo(({array, minified,text}) => {
+export const BucketConfigInfo: React.FC<PropsType> = ({array, minified,text}) => {
     if (minified || array.length < 1) return null;
 
     return (
@@ -17,4 +17,4 @@ export const BucketConfigInfo: React.FC<PropsType> = React.memo(({array, minifie
                 <span key={i.id}>{i.name} {index !== array.length - 1 ? <span>,&nbsp;</span> : null}</span>)}
         </div>
     )
-});
+};

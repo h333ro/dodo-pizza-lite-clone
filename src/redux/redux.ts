@@ -1,4 +1,4 @@
-import {combineReducers, createStore,applyMiddleware} from 'redux';
+import {combineReducers, createStore,applyMiddleware, compose} from 'redux';
 import {productReducer} from "./reducers/productsReducer";
 import {pizzaModalReducer} from "./reducers/pizzaModalReducer";
 import {bucketReducer} from './reducers/bucketReducer';
@@ -14,7 +14,10 @@ const rootReducer = combineReducers({
 });
 export type AppStateType = ReturnType<typeof rootReducer>;
 
-export const store = createStore(rootReducer,applyMiddleware(thunk));
+//@ts-ignore
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+export const store = createStore(rootReducer,composeEnhancers(applyMiddleware(thunk)));
 
 export type GetActionType<T> = T extends {[key:string]:(...args:any[]) => infer U} ? U : never;
 

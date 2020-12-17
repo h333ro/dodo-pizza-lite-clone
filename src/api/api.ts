@@ -2,7 +2,7 @@ import axios, {AxiosInstance} from 'axios';
 import {PizzaType} from "../redux/reducers/productsReducer";
 
 class Api {
-    axiosInstance: AxiosInstance;
+    readonly axiosInstance: AxiosInstance;
 
     constructor(url: string) {
         this.axiosInstance = axios.create({
@@ -12,10 +12,10 @@ class Api {
 }
 
 class PizzaApi extends Api {
-    async getPizza() {
+    public async getPizza() {
         return this.axiosInstance.get<Array<PizzaType>>('/pizza')
             .then(res => res.data).catch(e => {
-                console.log(e.message);
+                if(e.message === 'Network Error') alert('Пожалуйста введите в терминал json-server --watch db.json');
                 return;
             });
     }

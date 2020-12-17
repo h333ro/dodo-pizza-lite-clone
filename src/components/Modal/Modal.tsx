@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useMemo} from 'react';
+import React, {useCallback, useEffect} from 'react';
 import ReactDom from 'react-dom';
 import {useHandlerOnOutsideClick} from "../../customHooks/useHandlerOnOutsideClick";
 import {CSSTransition} from "react-transition-group";
@@ -11,13 +11,10 @@ type PropsType = {
     closeModal: () => void;
 }
 
-export const Modal: React.FC<PropsType> =
-    ({isOpen, children, closeModal}) => {
+export const Modal: React.FC<PropsType> = React.memo(({isOpen, children, closeModal}) => {
 
         useEffect(() => {
-            if (!isOpen) {
-                return
-            }
+            if (!isOpen) return;
             document.documentElement.style.paddingRight = window.innerWidth - document.documentElement.clientWidth + 'px';
             document.documentElement.style.overflow = 'hidden';
         }, [isOpen]);
@@ -44,4 +41,4 @@ export const Modal: React.FC<PropsType> =
                     </div>
             </CSSTransition>
             , el)
-};
+});

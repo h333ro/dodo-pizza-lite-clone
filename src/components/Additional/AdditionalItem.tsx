@@ -9,7 +9,7 @@ type PropsType = {
     itemCount:number,
 }
 
-export const AdditionalItem:React.FC<PropsType> = ({item,active,activeToggle,pizzaSize,itemCount}) =>{
+export const AdditionalItem:React.FC<PropsType> = React.memo(({item,active,activeToggle,pizzaSize,itemCount}) =>{
 
     const activeStyle = active ? ' additional__item_active' : '';
     const cost = item.cost[pizzaSize as keyof typeof item.cost];
@@ -37,4 +37,4 @@ export const AdditionalItem:React.FC<PropsType> = ({item,active,activeToggle,piz
         ):null}
         </div>
     )
-};
+});

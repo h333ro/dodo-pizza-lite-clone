@@ -13,7 +13,7 @@ export const BucketSuccess:React.FC = props =>{
     const alertItems = useSelector(getSuccessfulAddedArray);
 
     const removeItemAfterTime = useCallback((id:number)=>{
-        let timer = setTimeout(()=>{
+        setTimeout(()=>{
             dispatch(bucketActions.removeSuccessfulAddedItem(id));
         },1500);
     },[dispatch]);

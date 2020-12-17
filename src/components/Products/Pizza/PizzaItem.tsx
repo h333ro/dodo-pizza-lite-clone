@@ -6,7 +6,7 @@ type PropsType = {
     item:PizzaType,
 }
 
-export const PizzaItem:React.FC<PropsType> = ({setModalOpened,item}) =>{
+export const PizzaItem:React.FC<PropsType> = React.memo(({setModalOpened,item}) =>{
 
     const ingredientsString = item.ingredients.map(i => i.name).join(', ');
     const allCosts = item.types.map(i => i.cost);
@@ -27,10 +27,10 @@ export const PizzaItem:React.FC<PropsType> = ({setModalOpened,item}) =>{
             <span className={'products__item-ingredients'}>{ingredientsString}</span>
             <div className="products__user-interactions">
                 <div className="products__item-cost">
-                    <span>от {Math.min(...allCosts)} руб.</span>
+                    <span>от {Math.min(...allCosts)} Р</span>
                 </div>
                 <button data-clickable={true} className="products__choose-button">Выбрать</button>
             </div>
         </div>
     )
-};
+});

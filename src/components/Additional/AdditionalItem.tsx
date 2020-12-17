@@ -15,7 +15,7 @@ export const AdditionalItem:React.FC<PropsType> = React.memo(({item,active,activ
     const cost = item.cost[pizzaSize as keyof typeof item.cost];
 
     const ItemStyle = {
-        flex: `0 1 calc(${100/itemCount}% - 8px)`,
+        flex: `0 1 calc(33% - 8px)`,
         maxWidth: `calc(33% - 8px)`,
         margin: '3px 4px',
     };

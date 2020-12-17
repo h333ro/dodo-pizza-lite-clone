@@ -2,7 +2,6 @@
 .additional {
   display: flex;
   flex-wrap: wrap;
-  max-height: 150px;
   width: 100%;
   background: transparent;
   margin-bottom: 10px;
@@ -27,7 +26,7 @@
     flex-direction: column;
     transition: all .1s ease-out;
     position: relative;
-
+    height: 166px;
     &:hover {
       box-shadow: rgba(6, 5, 50, 0.12) 0 0 8px;
     }

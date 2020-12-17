@@ -1,7 +1,6 @@
 //ПИЦЦА-МОДАЛКА
 .pizza-modal {
   display: flex;
-  height: 100%;
   width: 924px;
 
   &__img-container {
@@ -25,7 +24,7 @@
     background: $lightgrey;
     border-radius: 0 9999px 9999px 0;
     padding: 20px;
-    height: 610px;
+    min-height: 610px;
   }
 
   &__title {

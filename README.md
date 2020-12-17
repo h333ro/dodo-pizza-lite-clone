@@ -1,7 +1,7 @@
 # `Procedure to launch this project:`
-## `1)yarn install`
+## `1)yarn install / npm install`
 ## `2)json-server --watch db.json`
-## `3)yarn start`
+## `3)yarn start / npm start`
 
 
 ### `yarn start`

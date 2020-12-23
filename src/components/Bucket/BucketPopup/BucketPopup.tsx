@@ -16,8 +16,8 @@ type PropsType = {
 export const BucketPopup: React.FC<PropsType> = ({isOpen, bucketItems}) => {
 
     const totalCost = useMemo(()=>{
-        return bucketItems.reduce((prev,i) =>{
-            return prev + (i.item.totalCost * i.count);
+        return bucketItems.reduce((prev,bucketItem) =>{
+            return prev + (bucketItem.item.totalCost * bucketItem.count);
         },0)
     },[bucketItems]);
 
@@ -27,9 +27,9 @@ export const BucketPopup: React.FC<PropsType> = ({isOpen, bucketItems}) => {
                 <div className="bucket">
                     <div className="bucket__items-container">
                         <TransitionGroup>
-                            {bucketItems.map(i =>
-                                <CSSTransition key={i.id} timeout={300} classNames={'modal'} unmountOnExit>
-                                    <BucketItem minified bucketItem={i}/>
+                            {bucketItems.map(bucketItem =>
+                                <CSSTransition key={bucketItem.id} timeout={300} classNames={'modal'} unmountOnExit>
+                                    <BucketItem minified bucketItem={bucketItem}/>
                                 </CSSTransition>
                             )}
                         </TransitionGroup>

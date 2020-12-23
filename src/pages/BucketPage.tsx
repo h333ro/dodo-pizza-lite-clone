@@ -12,7 +12,7 @@ import { useMemo } from 'react';
 
 export const BucketPage: React.FC = props => {
 
-    const items = useSelector(getBucketItems);
+    const bucketItems = useSelector(getBucketItems);
     const history = useHistory();
 
     const returnButtonHandler = () =>{
@@ -22,10 +22,10 @@ export const BucketPage: React.FC = props => {
     };
 
     const totalCost = useMemo(()=>{
-        return items.reduce((prev,i) =>{
-            return prev + (i.item.totalCost * i.count);
+        return bucketItems.reduce((prev,bucketItem) =>{
+            return prev + (bucketItem.item.totalCost * bucketItem.count);
         },0)
-    },[items]);
+    },[bucketItems]);
     return (
         <div className={'bucket'}>
             <div className="bucket__header">
@@ -37,20 +37,20 @@ export const BucketPage: React.FC = props => {
                 <h1>Корзина</h1>
                 <div className="bucket__items-container">
                     <TransitionGroup>
-                        {items.map(i =>
-                            <CSSTransition key={i.id} timeout={300} classNames={'modal'} unmountOnExit>
-                                <BucketItem bucketItem={i}/>
+                        {bucketItems.map(bucketItem =>
+                            <CSSTransition key={bucketItem.id} timeout={300} classNames={'modal'} unmountOnExit>
+                                <BucketItem bucketItem={bucketItem}/>
                             </CSSTransition>
                         )}
                     </TransitionGroup>
-                    {items.length > 0 ? (
+                    {bucketItems.length > 0 ? (
                         <div className="bucket__total-cost">
                             Сумма заказа:&nbsp;<span>{totalCost} Р</span>
                         </div>
                     ) : null}
                 </div>
-                {items.length < 1 ? <div style={{display:'flex',justifyContent:'center',alignItems:'center',fontSize:'20px'}}>В данный момент корзина пуста</div> : null}
-                {items.length > 0 ? (
+                {bucketItems.length < 1 ? <div style={{display:'flex',justifyContent:'center',alignItems:'center',fontSize:'20px'}}>В данный момент корзина пуста</div> : null}
+                {bucketItems.length > 0 ? (
                     <div className="bucket__buttons">
                         <div>
                             <ChooseButton handler={returnButtonHandler} text={'Вернуться в меню'}/>

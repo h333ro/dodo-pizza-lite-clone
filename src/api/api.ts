@@ -15,8 +15,7 @@ class PizzaApi extends Api {
     public async getPizza() {
         return this.axiosInstance.get<Array<PizzaType>>('/pizza')
             .then(res => res.data).catch(e => {
-                if(e.message === 'Network Error') alert('Пожалуйста введите в терминал json-server --watch db.json');
-                return;
+                if(e.message === 'Network Error') throw new Error('Пожалуйста введите в терминал json-server --watch db.json');
             });
     }
 }

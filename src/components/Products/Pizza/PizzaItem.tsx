@@ -8,8 +8,9 @@ type PropsType = {
 
 export const PizzaItem:React.FC<PropsType> = React.memo(({setModalOpened,item}) =>{
 
-    const ingredientsString = item.ingredients.map(i => i.name).join(', ');
-    const allCosts = item.types.map(i => i.cost);
+    const ingredientsString = item.ingredients.map(ingredient => ingredient.name).join(', ');
+    const allCosts = item.types.map(item => item.cost);
+
 
     const openModal = useCallback((e:React.MouseEvent<HTMLDivElement>) =>{
         const target = e.target as HTMLElement;

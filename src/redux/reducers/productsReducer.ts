@@ -1,6 +1,4 @@
-import {ThunkAction} from "redux-thunk";
-import {AppStateType, GetActionType} from "../redux";
-import {PizzaApiInstance} from "../../api/api";
+import {GetActionType} from "../redux";
 
 export type IngredientType = {
     id: number,
@@ -34,15 +32,15 @@ export type PizzaType = {
 
 const SET_PIZZA = 'productReducer/SET_PIZZA';
 
-const initialState = {
+export const productsInitialState = {
     products: {
         pizza: [] as Array<PizzaType>
     }
 };
-type InitialStateType = typeof initialState;
+type InitialStateType = typeof productsInitialState;
 
 
-export const productReducer = (state: InitialStateType = initialState, action: ActionType): InitialStateType => {
+export const productReducer = (state: InitialStateType = productsInitialState, action: ActionType): InitialStateType => {
     switch (action.type) {
         case SET_PIZZA:
             return {
@@ -59,15 +57,20 @@ export const productReducer = (state: InitialStateType = initialState, action: A
 
 
 type ActionType = GetActionType<typeof productActions>
-const productActions = {
+export const productActions = {
     setPizza: (pizza: Array<PizzaType>) => ({type: SET_PIZZA, pizza} as const)
 };
 
-export const getAndSetPizza = (): ThunkAction<Promise<void>, AppStateType, unknown, ActionType> =>
-    async (dispatch) => {
-        const pizzaArray = await PizzaApiInstance.getPizza();
-        if(pizzaArray) dispatch(productActions.setPizza(pizzaArray));
-    };
+// export const getAndSetPizza = (): ThunkAction<Promise<void>, AppStateType, unknown, ActionType> =>
+//     async (dispatch) => {
+//         try{
+//             const pizzaArray = await PizzaApiInstance.getPizza();
+//             if(pizzaArray) dispatch(productActions.setPizza(pizzaArray));
+//         }catch (e) {
+//             alert(e.message);
+//         }
+//         return;
+//     };
 
 
 

@@ -40,23 +40,24 @@ export const bucketReducer = (state: InitialState = initialState, action: Action
             }
         }
         case INCREASE_DECREASE_FLOW: {
-            const itemForChange = state.bucketItems.find(i => i.id === action.itemId);
+            const itemForChange = state.bucketItems.find(bucketItem => bucketItem.id === action.itemId);
             let newCount = itemForChange!.count;
             if (action.changeType === "increase") {
                 newCount = newCount + 1;
             } else {
                 newCount = newCount - 1;
             }
+
             let newBucketItems;
             if(newCount > 0){
-                newBucketItems = state.bucketItems.map(i => {
-                    if(i.id === action.itemId){
-                        return{...i,count:newCount}
+                newBucketItems = state.bucketItems.map(bucketItem => {
+                    if(bucketItem.id === action.itemId){
+                        return{...bucketItem,count:newCount}
                     }
-                    return i;
+                    return bucketItem;
                 });
             }else{
-                newBucketItems = state.bucketItems.filter(i => i.id !== action.itemId);
+                newBucketItems = state.bucketItems.filter(bucketItem => bucketItem.id !== action.itemId);
             }
 
             return {
@@ -67,7 +68,7 @@ export const bucketReducer = (state: InitialState = initialState, action: Action
         case REMOVE_ITEM:{
             return{
                 ...state,
-                bucketItems: state.bucketItems.filter(i => i.id !== action.itemId),
+                bucketItems: state.bucketItems.filter(bucketItem => bucketItem.id !== action.itemId),
             }
         }
         case ADD_SUCCESSFUL_ITEM:{
@@ -80,7 +81,7 @@ export const bucketReducer = (state: InitialState = initialState, action: Action
         case REMOVE_SUCCESSFUL_ITEM:{
             return {
                 ...state,
-                successfulAdded: state.successfulAdded.filter(i => i.id !== action.id),
+                successfulAdded: state.successfulAdded.filter(addedItem => addedItem.id !== action.id),
             }
         }
         default:

@@ -27,7 +27,7 @@ export const PizzaContent: React.FC = props => {
         <div className={'container'}>
             <h2>Пицца</h2>
             <div className="products">
-                {pizzaItems.map(i => <PizzaItem key={i.id} setModalOpened={setPizzaModalOpened} item={i}/>)}
+                {pizzaItems.map(pizzaItem => <PizzaItem key={pizzaItem.id} setModalOpened={setPizzaModalOpened} item={pizzaItem}/>)}
             </div>
             <Modal isOpen={isOpen} closeModal={closeModal}>
                 <PizzaModal closeModal={closeModal}/>

@@ -22,21 +22,21 @@ type InitialStateType = typeof initialState;
 export const pizzaModalReducer = (state:InitialStateType=initialState,action:ActionType):InitialStateType =>{
     switch(action.type){
         case SET_ITEM: {
-            let item = action.item;
+            let pizzaItem = action.item;
             const sizeButtons = {
-                items:item.types.map(i => ({name:i.name,disabled:false})),
+                items:pizzaItem.types.map(itemType => ({name:itemType.name,disabled:false})),
                 active:0,
             };
             const doughButtons = {
                 items:[
-                    {name:'Традиционное',disabled:!item.types.find(i => i.name === sizeButtons.items[sizeButtons.active].name)!.traditionalDough},
-                    {name:'Тонкое',disabled:!item.types.find(i => i.name === sizeButtons.items[sizeButtons.active].name)!.thinDough},
+                    {name:'Традиционное',disabled:!pizzaItem.types.find(pizzaType => pizzaType.name === sizeButtons.items[sizeButtons.active].name)!.traditionalDough},
+                    {name:'Тонкое',disabled:!pizzaItem.types.find(pizzaType => pizzaType.name === sizeButtons.items[sizeButtons.active].name)!.thinDough},
                 ],
                 active:0,
             };
             return {
                 ...state,
-                pizzaItem:item,
+                pizzaItem:pizzaItem,
                 sizeButtons:sizeButtons,
                 doughButtons:doughButtons,
                 additionalActive: [],
@@ -50,16 +50,16 @@ export const pizzaModalReducer = (state:InitialStateType=initialState,action:Act
             };
             let newDoughButtons:ToggleButtonsType = {
                 ...state.doughButtons,
-                items:state.doughButtons.items.map(i => {
+                items:state.doughButtons.items.map(buttonItem => {
                     let doughEnabledForNewSize = newSizeButtons.items[action.index].name;
-                    if(i.name === 'Традиционное'){
-                        return {...i,disabled:!state.pizzaItem.types.find(i => i.name === doughEnabledForNewSize)!.traditionalDough}
+                    if(buttonItem.name === 'Традиционное'){
+                        return {...buttonItem,disabled:!state.pizzaItem.types.find(pizzaType => pizzaType.name === doughEnabledForNewSize)!.traditionalDough}
                     }
-                    return {...i,disabled:!state.pizzaItem.types.find(i => i.name === doughEnabledForNewSize)!.thinDough}
+                    return {...buttonItem,disabled:!state.pizzaItem.types.find(pizzaType => pizzaType.name === doughEnabledForNewSize)!.thinDough}
                 })
             };
             if(newDoughButtons.items[newDoughButtons.active].disabled){
-                newDoughButtons = {...newDoughButtons,active:newDoughButtons.items.findIndex(i => !i.disabled)};
+                newDoughButtons = {...newDoughButtons,active:newDoughButtons.items.findIndex(buttonsItem => !buttonsItem.disabled)};
             }
             return {
                 ...state,
@@ -79,7 +79,7 @@ export const pizzaModalReducer = (state:InitialStateType=initialState,action:Act
         }
         case ADDITIONAL_ACTIVE_TOGGLE:{
             const newAdditionalActive = state.additionalActive.includes(action.index) ?
-                state.additionalActive.filter(i => i!==action.index) :
+                state.additionalActive.filter(additionalItemIndex => additionalItemIndex!==action.index) :
                 [...state.additionalActive,action.index];
             return{
                 ...state,
@@ -87,9 +87,9 @@ export const pizzaModalReducer = (state:InitialStateType=initialState,action:Act
             }
         }
         case REMOVE_RETURN_INGREDIENT_TOGGLE:{
-            const newIngredients = state.pizzaItem.ingredients.map(i =>{
-                if(i.id === action.id) return {...i,removed:!i.removed};
-                return i;
+            const newIngredients = state.pizzaItem.ingredients.map(ingredient =>{
+                if(ingredient.id === action.id) return {...ingredient,removed:!ingredient.removed};
+                return ingredient;
             });
             return {
                 ...state,

@@ -39,10 +39,10 @@ export const AdCarousel:React.FC = props => {
     return (
         <div className={'main-carousel'}>
             <Slider { ...settings }>
-                {carouselArray.map((i,index) => {
+                {carouselArray.map((carouselItem,index) => {
                     return (
                         <div key={index} className={'main-carousel__slide'}>
-                            <img src={i.img} alt={'carousel-'+index}/>
+                            <img src={carouselItem.img} alt={'carousel-'+index}/>
                         </div>
                     )
                 })}

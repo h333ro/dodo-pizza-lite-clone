@@ -1,16 +1,17 @@
 import React, {useEffect} from 'react';
-import { Route } from 'react-router-dom';
+import {Route} from 'react-router-dom';
 import './scss/App.scss'
 import {MainPage} from "./pages/MainPage";
 import {BucketPage} from "./pages/BucketPage";
 import {useDispatch} from "react-redux";
-import { getAndSetPizza } from './redux/reducers/productsReducer';
+import {fetchPizza} from "./redux/saga/PizzaSaga";
+// import {getAndSetPizza} from "./redux/reducers/productsReducer";
 
 function App() {
 
     const dispatch = useDispatch();
     useEffect(()=>{
-        dispatch(getAndSetPizza());
+        dispatch(fetchPizza());
     },[dispatch]);
 
     return (

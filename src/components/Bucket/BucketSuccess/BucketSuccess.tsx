@@ -21,9 +21,9 @@ export const BucketSuccess:React.FC = props =>{
     return(
         <div className={'navbar__bucket-success'}>
             <TransitionGroup>
-                {alertItems.map(i => (
-                    <CSSTransition timeout={300} key={i.id} classNames={'popup'} unmountOnExit>
-                        <BucketSuccessItem item={i} removeItem={removeItemAfterTime}/>
+                {alertItems.map(alertItem => (
+                    <CSSTransition timeout={300} key={alertItem.id} classNames={'popup'} unmountOnExit>
+                        <BucketSuccessItem item={alertItem} removeItem={removeItemAfterTime}/>
                     </CSSTransition>
                 ))}
             </TransitionGroup>

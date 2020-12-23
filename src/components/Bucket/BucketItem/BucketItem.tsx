@@ -12,7 +12,7 @@ type PropsType = {
 export const BucketItem:React.FC<PropsType> = React.memo(({bucketItem,minified=false}) =>{
 
     const item = bucketItem.item;
-    const removedIngredients = item.ingredients.filter(i => i.removed);
+    const removedIngredients = item.ingredients.filter(ingredient => ingredient.removed);
     const dispatch = useDispatch();
     const bucketInfoRef = useRef(null as null | HTMLDivElement);
 

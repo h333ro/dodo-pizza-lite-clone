@@ -1,7 +1,11 @@
 # `Procedure to launch this project:`
-## `1)yarn install / npm install`
-## `2)json-server --watch db.json`
-## `3)yarn start / npm start`
+
+#  `Project is very old, so use node v14.21.3`
+
+## `1) use Node v.14.21.3`
+## `2)yarn install / npm install`
+## `3)json-server --watch db.json`
+## `4)yarn start / npm start`
 
 
 ### `yarn start`

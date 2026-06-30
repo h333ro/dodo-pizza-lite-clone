@@ -1,5 +1,8 @@
 import React from "react";
 import {AdditionalType} from "../../redux/reducers/productsReducer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
+
 
 type PropsType = {
     item:AdditionalType,
@@ -32,7 +35,7 @@ export const AdditionalItem:React.FC<PropsType> = React.memo(({item,active,activ
             </div>
             {active ? (
             <div className="additional__active-icon">
-                <i className="fas fa-check"/>
+                <FontAwesomeIcon icon={faCheck}/>
             </div>
         ):null}
         </div>

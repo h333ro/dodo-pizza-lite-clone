@@ -2,6 +2,8 @@ import React, {useCallback, useEffect} from 'react';
 import ReactDom from 'react-dom';
 import {useHandlerOnOutsideClick} from "../../customHooks/useHandlerOnOutsideClick";
 import {CSSTransition} from "react-transition-group";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 import '../../CSSTransition/modal.css';
 
@@ -34,7 +36,7 @@ export const Modal: React.FC<PropsType> = React.memo(({isOpen, children, closeMo
                     <div className={'modal'} ref={modalRef}>
                         <div className="modal__content">
                             <button className={'modal__close-button'} onClick={onModalClose}>
-                                <i className="fas fa-times"/>
+                                <FontAwesomeIcon icon={faTimes}/>
                             </button>
                             {children}
                         </div>
